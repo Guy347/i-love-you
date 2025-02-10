@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Button with Actions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #ff007f, #ffffff); /* กราเดี้ยนจากชมพูไปขาว */
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 80px; /* ขนาดข้อความโจทย์ */
+            color: #333; /* สีข้อความ */
+            margin-bottom: 20px; /* เพิ่มช่องว่างระหว่างโจทย์กับปุ่ม */
+        }
+
+        .answer-button {
+            background-color: #ff007f; /* สีชมพู */
+            color: white;
+            font-size: 40px; /* ขนาดข้อความในปุ่ม */
+            padding: 40px 60px; /* ขนาดของปุ่ม */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px 0; /* เพิ่มช่องว่างระหว่างปุ่ม */
+            width: 200px;
+        }
+
+        .answer-button:hover {
+            background-color: #e6006e; /* เมื่อชี้ไปที่ปุ่ม */
+        }
+
+        .response {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+
+        /* หดปุ่ม B */
+        @keyframes shrink {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        .shrink {
+            animation: shrink 10s forwards; /* ค่อยๆ หด */
+        }
+
+        /* สไตล์หน้าใหม่ */
+        .new-page {
+            background: linear-gradient(to bottom, #ff007f, #ffffff); /* กราเดี้ยนสีชมพู */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="question">รักเค้าไหม:</div> <!-- โจทย์ -->
+        <button class="answer-button" onclick="goToNextPage()">รัก</button>
+        <button class="answer-button" id="answerB" onclick="shrinkButton()">ไม่รัก</button>
+
+        <div class="response" id="response"></div>
+    </div>
+
+    <script>
+        // ฟังก์ชันไปหน้าใหม่เมื่อคลิกคำตอบ A
+        function goToNextPage() {
+            window.location.href = "file:///C:/Users/pc/%E0%B8%84%E0%B8%B3%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%A2.html"; // เปลี่ยน URL ตามต้องการ
+        }
+
+        // ฟังก์ชันให้ปุ่ม B หดเล็กลง
+        function shrinkButton() {
+            document.getElementById('answerB').classList.add('shrink');
+        }
+    </script>
+</body>
+</html>
